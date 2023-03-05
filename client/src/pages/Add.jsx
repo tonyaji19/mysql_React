@@ -31,35 +31,39 @@ const Add = () => {
 
   return (
     <div className="form">
-      <h1>Add New Book</h1>
+      <h1 className="font-bold text-2xl text-teal-700">Add New User</h1>
       <input
+        className="rounded-sm"
         type="text"
-        placeholder="nama lengkap"
+        placeholder="Nama Lengkap"
         name="namalengkap"
         onChange={handleChange}
       />
       <textarea
+        className="border border-gray-500 rounded-sm"
         rows={5}
         type="text"
-        placeholder="username"
+        placeholder="Username"
         name="username"
         onChange={handleChange}
       />
       <input
+        className="rounded-sm"
         type="password"
-        placeholder="password"
+        placeholder="Password"
         name="password"
         onChange={handleChange}
       />
       <input
+        className="rounded-sm"
         type="text"
-        placeholder="status"
+        placeholder="Status"
         name="status"
         onChange={handleChange}
       />
       <button onClick={handleClick}>Add</button>
       {error && "Something went wrong!"}
-      <Link to="/">See all books</Link>
+      <Link to="/">See all Users</Link>
     </div>
   );
 };
