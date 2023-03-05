@@ -1,0 +1,1 @@
+SELECT * FROM crud.tbl_user;
