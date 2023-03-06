@@ -37,7 +37,7 @@ const Users = () => {
         {user.map((usr) => (
           <div
             key={usr.userid}
-            className="w-[100%] text-left text-gray-700 bg-gray-300 p-3 grid grid-cols-2 mb-3 rounded-sm font-semibold"
+            className="w-[100%] text-left text-gray-700 bg-gray-300 p-3 grid md:grid-cols-2 sm:grid-cols-3 mb-3 rounded-sm font-semibold"
           >
             <p className="p-2">
               Name : <span className=" font-normal">{usr.namalengkap}</span>
@@ -45,10 +45,10 @@ const Users = () => {
             <p className="p-2">
               Username : <span className=" font-normal">{usr.username}</span>
             </p>
-            <p className="px-2">
+            <p className="p-2">
               Password : <span className=" font-normal">{usr.password}</span>
             </p>
-            <p className="px-2">
+            <p className="p-2">
               Status : <span className=" font-normal">{usr.status}</span>
             </p>
             <button
@@ -69,7 +69,7 @@ const Users = () => {
         ))}
       </div>
 
-      <button className="addHome ">
+      <button className="addHome mb-10">
         <Link to="/add" style={{ color: "inherit", textDecoration: "none" }}>
           Add New User
         </Link>

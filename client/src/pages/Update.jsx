@@ -70,7 +70,9 @@ const Update = () => {
         Update
       </button>
       {error && "Something went wrong!"}
-      <Link to="/">See all Users</Link>
+      <Link className="text-gray-500 text-light" to="/">
+        See all Users
+      </Link>
     </div>
   );
 };
