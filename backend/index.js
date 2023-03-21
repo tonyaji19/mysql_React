@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "tonyaji19",
-  database: "crud",
+  password: "",
+  database: "crudexpress",
 });
 
 app.get("/", (req, res) => {
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-  const q = "SELECT * FROM tbl_user";
+  const q = "SELECT * FROM crudexpress";
   db.query(q, (err, data) => {
     if (err) {
       console.log(err);
@@ -30,7 +30,7 @@ app.get("/users", (req, res) => {
 
 app.post("/users", (req, res) => {
   const q =
-    "INSERT INTO tbl_user(`namalengkap`, `username`, `password`, `status`) VALUES (?)";
+    "INSERT INTO crudexpress(`namalengkap`, `username`, `password`, `status`) VALUES (?)";
 
   const values = [
     req.body.namalengkap,
@@ -47,7 +47,7 @@ app.post("/users", (req, res) => {
 
 app.delete("/users/:id", (req, res) => {
   const idUser = req.params.id;
-  const q = " DELETE FROM tbl_user WHERE userid = ? ";
+  const q = " DELETE FROM crudexpress WHERE userid = ? ";
 
   db.query(q, [idUser], (err, data) => {
     if (err) return res.send(err);
@@ -58,7 +58,7 @@ app.delete("/users/:id", (req, res) => {
 app.put("/users/:id", (req, res) => {
   const idUser = req.params.id;
   const q =
-    "UPDATE tbl_user SET `namalengkap`= ?, `username`= ?, `password`= ?, `status`= ? WHERE userid = ?";
+    "UPDATE crudexpress SET `namalengkap`= ?, `username`= ?, `password`= ?, `status`= ? WHERE userid = ?";
 
   const values = [
     req.body.namalengkap,
